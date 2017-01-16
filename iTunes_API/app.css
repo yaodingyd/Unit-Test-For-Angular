@@ -1,0 +1,67 @@
+.margin-bottom {
+	margin-bottom: 32px;
+}
+.margin-top {
+	margin-top: 32px;
+}
+.margin-right {
+	margin-right: 32px;
+}
+.margin-left {
+	margin-left: 32px;
+}
+.pull-center {
+	text-align:center;
+	margin:0 auto !important;
+	float:none !important;
+}
+.border {
+	border: solid 1px #eee;
+}
+.title {
+	font-size: 30px;
+	font-weight: 500;
+	overflow: hidden;
+    position: relative;
+    text-overflow: ellipsis;
+    white-space: normal;
+    word-wrap: break-word;
+}
+.preview {
+	float: left;
+    margin-right: 20px;
+    text-align: center;
+    display: block;
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+}
+
+.video {
+	overflow: hidden;
+    background: #f1f1f1;
+    font-size: 0;
+    vertical-align: middle;
+    display: inline-block;
+    position: relative;
+}
+.content {
+	overflow: hidden;
+    position: relative;
+    line-height: 1.6;
+}
+.description {
+	white-space: nowrap;
+	word-wrap: break-word
+}
+.artist {
+	color: blue;
+	cursor: pointer;
+}
+.artist a {
+	text-decoration: none;
+}
+.album a {
+	text-decoration: none;
+}
+
