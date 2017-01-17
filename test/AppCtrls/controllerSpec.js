@@ -13,6 +13,11 @@ describe('AppCtrls', function() {
     $httpBackend = _$httpBackend_;
   }));
 
+  afterEach(function() {
+    $httpBackend.verifyNoOutstandingExpectation();
+    $httpBackend.verifyNoOutstandingRequest();
+  });
+
   describe('/searchController', function() {
     beforeEach(function(){
       controller = $controller('searchController', { 
@@ -44,19 +49,22 @@ describe('AppCtrls', function() {
       expect($scope.showVideo).toBe(true);
     });
 
-    function closeVideo() {
-        $scope.previewUrl = "";
-        $scope.showVideo = false;
-    };
-
     it('should correctly play video', function(){
       $scope.closeVideo();
       expect($scope.previewUrl).toEqual('');
       expect($scope.showVideo).toBe(false);
     });
 
-
-
+    xit('should get search result', function(){
+      var url = $sce.trustAsResourceUrl('https://itunes.apple.com/search');
+      $httpBackend
+        .expect('GET', url)
+        .respond(200, { results: 'bar' });
+      $scope.doSearch(false);
+      expect($httpBackend.flush).not.toThrow();
+      expect($scope.mediaSearchResults).toEqual('bar');
+      expect($scope.searching).toBe(false);
+    })
   });
 
 });

@@ -107,11 +107,3 @@ ctrls.controller( "albumController", function($scope, $state, $http) {
             $scope.mediaSearchResults = response.results; 
         });
 });
-
-
-
-
-ctrls.controller("demoController", function($scope, $http, $state){
-  $scope.x = 1;
-})
-
