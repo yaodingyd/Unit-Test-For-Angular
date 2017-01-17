@@ -7,21 +7,18 @@ module.exports = function(config) {
     // base path that will be used to resolve all patterns (eg. files, exclude)
     basePath: '',
 
-
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
     frameworks: ['jasmine'],
-
 
     // list of files / patterns to load in the browser
     files: [
       './node_modules/angular/angular.js',                             // angular
       './node_modules/angular-ui-router/release/angular-ui-router.js', // ui-router
       './node_modules/angular-mocks/angular-mocks.js',                 // loads our modules for tests
-      './iTunes_API/app.js',                                               
+      './iTunes_API/**.js',                                               
       './test/**/**Spec.js'
     ],
-
 
     // list of files to exclude
     exclude: [
@@ -37,7 +34,7 @@ module.exports = function(config) {
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress'],
+    reporters: ['spec'],
 
 
     // web server port
