@@ -1,0 +1,31 @@
+{
+  "name": "itune-search-app",
+  "version": "1.0.0",
+  "description": "a music search webapp using iTunes rest api to get the data",
+  "main": "index.js",
+  "scripts": {
+    "test": "karma start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yaodingyd/iTunesSearchApp.git"
+  },
+  "keywords": [
+    "angular"
+  ],
+  "author": "yd",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yaodingyd/iTunesSearchApp/issues"
+  },
+  "homepage": "https://github.com/yaodingyd/iTunesSearchApp#readme",
+  "devDependencies": {
+    "angular": "^1.6.1",
+    "angular-mocks": "^1.6.1",
+    "angular-ui-router": "^0.3.2",
+    "jasmine-core": "^2.5.2",
+    "karma": "^1.4.0",
+    "karma-jasmine": "^1.1.0",
+    "karma-phantomjs-launcher": "^1.0.2"
+  }
+}

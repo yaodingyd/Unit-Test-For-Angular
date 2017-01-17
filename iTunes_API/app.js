@@ -16,7 +16,10 @@ myApp.config(function ($stateProvider, $urlRouterProvider){
       });
 });
 
-var ctrls = angular.module("AppCtrls", []);
+
+
+var ctrls = angular.module("AppCtrls", ["AppServices"]);
+
 
 ctrls.controller("searchController", function ($scope, $http, $sce, $state) {
     
@@ -31,7 +34,7 @@ ctrls.controller("searchController", function ($scope, $http, $sce, $state) {
 
     if ($state.params.term && $state.params.term.length > 0) {
         $scope.searchTerm = $state.params.term;
-        search(false);
+        searchService.search(false);
     }
     scope = $scope;
    
@@ -59,7 +62,7 @@ ctrls.controller("searchController", function ($scope, $http, $sce, $state) {
             .finally(function () {
                 $scope.searching = false; 
             });
-    };
+    }
 
     function playVideo(item) {
         $scope.title = item.trackName || item.collectionName;
@@ -74,6 +77,9 @@ ctrls.controller("searchController", function ($scope, $http, $sce, $state) {
     };
 
 });
+
+var service = angular.module("AppServices", []);
+
 
 myApp.directive('videoplayer', function () {
   return {
