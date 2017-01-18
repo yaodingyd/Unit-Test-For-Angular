@@ -1,17 +1,12 @@
-a music search webapp using iTunes rest api to get the data
+A demo app for unit testing in Angular.
 
-User is able to enter a search term and view list of songs that match the term.
-User is able to tap on the image and listen to the preview of the song.
-User is able to view the list of songs in the album.
+Run `npm install` and `npm test`.
 
+### Code changes and good-to-know
 
---------------------------------------------------------------
-
-You can run the app with any local server
-
-To run with nodejs http-server:
-install node, install npm
-install http-server via npm :  npm install -g http-server
-cd to project directlory
-run : http-server
-in your browser go to : http://127.0.0.1:8080/#/
+1. I updated angular version to 1.6.1. Angular 1.2 was released on 2014 which is a almost obselete version. Please use at least 1.5. There are some changes I have to made because angular changes, in order to pass tests.
+2. For any `JSONP` urls they have to be whitelisted in config by `$sce` service. See code line20-25.
+3. `JSONP`'s `callback` parameter changes to `jsonpCallbackParam`.
+4. Before I wanted to refactor `$http` services in controller into a sole `Service` module but because of code's tight couple and I'm kind of lazy, I didn't finish it. But for unit test and code modularity it is recommended to do so.
+5. There is a demo `Service` called `service.js` and demo unit test specs in test/Service/demoSpec.js which showes unit test for services.
+  

@@ -1,3 +1,5 @@
+// This is just a demo unit test for service
+
 describe('MyService', function() {
   beforeEach(module('AsynService'));
 
@@ -16,7 +18,6 @@ describe('MyService', function() {
   });
 
   it('should get api', function(){
-    //var url = $sce.trustAsResourceUrl('https://yesno.wtf/api');
     var url = 'https://yesno.wtf/api';
     $httpBackend
       .expect('GET', url)

@@ -4,7 +4,8 @@
   "description": "a music search webapp using iTunes rest api to get the data",
   "main": "index.js",
   "scripts": {
-    "test": "karma start"
+    "test": "karma start",
+    "start": "http-server ./iTunes_API"
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,7 @@
     "angular": "^1.6.1",
     "angular-mocks": "^1.6.1",
     "angular-ui-router": "^0.3.2",
+    "http-server": "^0.9.0",
     "jasmine-core": "^2.5.2",
     "karma": "^1.4.0",
     "karma-jasmine": "^1.1.0",

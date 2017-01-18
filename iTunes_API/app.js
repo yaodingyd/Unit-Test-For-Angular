@@ -17,6 +17,12 @@ myApp.config(function ($stateProvider, $urlRouterProvider){
 });
 
 var ctrls = angular.module("AppCtrls", []);
+ctrls.config(function($sceDelegateProvider) {
+  $sceDelegateProvider.resourceUrlWhitelist([
+    'self',
+    'https://itunes.apple.com/search'
+  ]);
+});
 
 ctrls.controller("searchController", function ($scope, $http, $sce, $state) {
     
@@ -50,11 +56,11 @@ ctrls.controller("searchController", function ($scope, $http, $sce, $state) {
                 term: $scope.searchTerm,
                 media: "music",
                 country: "US",
-                callback: "JSON_CALLBACK"
+                jsonpCallbackParam: "callback"
                 } 
             })
-            .success(function (response) {
-                $scope.mediaSearchResults = response.results; 
+            .then(function (response) {
+                $scope.mediaSearchResults = response.data.results; 
             })
             .finally(function () {
                 $scope.searching = false; 

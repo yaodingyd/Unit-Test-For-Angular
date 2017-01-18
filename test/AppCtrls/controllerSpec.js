@@ -55,11 +55,12 @@ describe('AppCtrls', function() {
       expect($scope.showVideo).toBe(false);
     });
 
-    xit('should get search result', function(){
-      var url = $sce.trustAsResourceUrl('https://itunes.apple.com/search');
+    it('should get search result', function(){
+      //var url = $sce.trustAsResourceUrl('https://itunes.apple.com/search');
+      var url = 'https://itunes.apple.com/search?country=US&jsonpCallbackParam=callback&media=music&term=&callback=JSON_CALLBACK';
       $httpBackend
-        .expect('GET', url)
-        .respond(200, { results: 'bar' });
+        .expect('JSONP', url)
+        .respond(200, {results: 'bar'});
       $scope.doSearch(false);
       expect($httpBackend.flush).not.toThrow();
       expect($scope.mediaSearchResults).toEqual('bar');
